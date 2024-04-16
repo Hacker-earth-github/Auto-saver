@@ -6,7 +6,7 @@ import { FaBox } from "react-icons/fa";
 const Header = () => {
   return (
     <header>
-      <FaBox /><Link>ÀJọ</Link>
+      <FaBox /><Link to="/">ÀJọ</Link>
     </header>
   )
 }

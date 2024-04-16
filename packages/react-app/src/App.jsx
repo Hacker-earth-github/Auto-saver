@@ -9,14 +9,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route
           path="/dashboard"
           element={
@@ -25,7 +18,14 @@ function App() {
             </Layout>
           }
         />
-        <Route path="withdrawal-page" element={<WithdrawalPage />} />
+        <Route
+          path="/withdrawal-page"
+          element={
+            <Layout>
+              <WithdrawalPage />
+            </Layout>
+          }
+        />
         <Route
           path="/withdrawal-success-page"
           element={<WithsrawalSuccess />}

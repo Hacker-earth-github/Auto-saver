@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeLoader from "./HomeLoader/HomeLoader";
+import Layout from "./Layout";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,16 +11,17 @@ const Home = () => {
     }, 5000);
   }, []);
 
-
- return(
-  <>
-    {isLoading ? <HomeLoader/> : (
-      <section>
-        Home
-      </section>
-    ) }
-  </>
- )
+  return (
+    <>
+      {isLoading ? (
+        <HomeLoader />
+      ) : (
+        <Layout>
+          <section>Home</section>
+        </Layout>
+      )}
+    </>
+  );
 };
 
 export default Home;

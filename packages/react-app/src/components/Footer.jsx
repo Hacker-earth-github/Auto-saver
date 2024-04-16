@@ -12,7 +12,7 @@ const Footer = () => {
       <p style={{  display: "flex", alignItems: "center", gap: "4px" }}>
         All Rights Reserved || Copyright &copy; {currentDate.getFullYear()}{" "}
         <FaBox />
-        <Link>ÀJọ</Link>
+        <Link to="/">ÀJọ</Link>
       </p>
     </footer>
   );
