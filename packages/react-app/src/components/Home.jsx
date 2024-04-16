@@ -1,22 +1,25 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import HomeLoader from "./HomeLoader/HomeLoader";
 
 const Home = () => {
-  return (
-    <section className="home">
-      <div className="all">
-      <div className="homeCon">
-          <h1>Let GetStart</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, nisi!</p>
-       </div>
-          <div className="btnCon">
-            <button className="btnBlue">Lookup</button>
-            <button className="btnWhite">Set it Up</button>
-          </div>
-      </div>
-       
-    </section>
-  );
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+  }, []);
+
+
+ return(
+  <>
+    {isLoading ? <HomeLoader/> : (
+      <section>
+        Home
+      </section>
+    ) }
+  </>
+ )
 };
 
 export default Home;
