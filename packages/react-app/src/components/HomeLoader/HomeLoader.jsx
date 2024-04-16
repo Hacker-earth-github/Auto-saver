@@ -17,7 +17,7 @@ const HomeLoader = () => {
         <div></div>
         <div></div>
       </div>
-      <p>Save And Earn</p>
+      <p>Spend Less And Save More</p>
     </div>
   );
 };
