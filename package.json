@@ -1,0 +1,32 @@
+{
+    "name": "auto-saver",
+    "version": "1.0.0",
+    "description": "Custom Celo Composer project.",
+    "private": true,
+    "author": "Celo",
+    "license": "MIT",
+    "scripts": {
+        "react-app:dev": "yarn workspace @auto-saver/react-app dev",
+        "react-app:build": "yarn workspace @auto-saver/react-app build",
+        "react-app:start": "yarn workspace @auto-saver/react-app start",
+        "react-app:lint": "yarn workspace @auto-saver/react-app lint",
+        "hardhat:compile": "yarn workspace @auto-saver/hardhat compile",
+        "subgraphs:test": "yarn workspace @auto-saver/subgraphs test",
+        "subgraphs:get-abi": "yarn workspace @auto-saver/subgraphs get-abi"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/celo-org/celo-composer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/celo-org/celo-composer/issues"
+    },
+    "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
+    "workspaces": [
+        "packages/*"
+    ],
+    "keywords": [
+        "celo-composer",
+        "celo"
+    ]
+}
