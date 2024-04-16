@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeLoader from "./HomeLoader/HomeLoader";
+import Layout from "./Layout";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,18 +16,18 @@ const Home = () => {
   <>
     {isLoading ? <HomeLoader/> : (
       <section className="home">
-        <div className="all">
-          <div className="homeCon">
-            <h1>Let Get Started</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, velit!</p>
-          </div>
-          <div className="btnCon">
-            <button className="btnBlue">Submit here</button>
-            <button className="btnWhite">Go Catch</button>
-          </div>
+      <div className="all">
+        <div className="homeCon">
+          <h1>Let Get Started</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, velit!</p>
         </div>
-       
-      </section>
+        <div className="btnCon">
+          <button className="btnBlue">Submit here</button>
+          <button className="btnWhite">Go Catch</button>
+        </div>
+      </div>
+     
+    </section>
     ) }
   </>
  )
