@@ -9,7 +9,7 @@ const Footer = () => {
       className="--flex-center b-top"
       style={{ fontSize: "25px", display: "flex", alignContent: "center" }}
     >
-      <p style={{  display: "flex", alignItems: "center", gap: "4px" }}>
+      <p style={{ display: "flex", alignItems: "center", gap: "4px" }}>
         All Rights Reserved || Copyright &copy; {currentDate.getFullYear()}{" "}
         <FaBox />
         <Link to="/">ÀJọ</Link>
