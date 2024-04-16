@@ -1,12 +1,13 @@
 import React from 'react'
-import Header from './Header';
+
 import Footer from './Footer';
+import Header from './Header/Header';
 
 const Layout = ({ children }) => {
     return (
       <>
         <Header />
-        <div className="--pad" style={{ minHeight: "80vh" }}>
+        <div className="--pad" style={{ minHeight: "85vh" }}>
           {children}
         </div>
         <Footer />
