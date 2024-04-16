@@ -17,7 +17,7 @@ const WithdrawalPage = () => {
             <input type="text" placeholder="Enter amount to be withdrawn" />
           </div>
 
-          <button className="--btn-primary --btn --btn-block">Withdraw</button>
+          <button className="--btn-primary --btn --btn-block">Withdraw Asset</button>
         </form>
       </section>
     </div>
