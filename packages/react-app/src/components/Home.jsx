@@ -14,8 +14,18 @@ const Home = () => {
  return(
   <>
     {isLoading ? <HomeLoader/> : (
-      <section>
-        Home
+      <section className="home">
+        <div className="all">
+          <div className="homeCon">
+            <h1>Let Get Started</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, velit!</p>
+          </div>
+          <div className="btnCon">
+            <button className="btnBlue">Submit here</button>
+            <button className="btnWhite">Go Catch</button>
+          </div>
+        </div>
+       
       </section>
     ) }
   </>
