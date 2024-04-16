@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Layout from "./components/Layout";
 import WithdrawalPage from "./components/Withdrawal/WithdrawalPage";
 import WithsrawalSuccess from "./components/Withdrawal/WithsrawalSuccess";
+import SaveAsset from "./components/Withdrawal/SaveAsset";
 
 function App() {
   return (
@@ -23,6 +24,15 @@ function App() {
           element={
             <Layout>
               <WithdrawalPage />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/save-asset"
+          element={
+            <Layout>
+              <SaveAsset />
             </Layout>
           }
         />

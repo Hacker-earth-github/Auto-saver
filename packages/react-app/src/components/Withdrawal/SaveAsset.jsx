@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Withdraw.css";
 
-const WithdrawalPage = () => {
+const SaveAsset = () => {
   const [walletAddress, setWalletAddress] = useState(null);
   const [walletBalance, setWalletBalance] = useState(null);
-  
+
   useEffect(() => {
     const walletSaved = localStorage.getItem("walletAddress");
     const walletBal = localStorage.getItem("balanceInEther");
     setWalletAddress(walletSaved);
     setWalletBalance(walletBal);
   }, []);
-
   return (
     <div className="container">
       <section className="form-container">
-        <h1>Withdraw Token</h1>
-        <p>Balance: {walletBalance} </p>
+        <h1>Save Token</h1>
+        <p>Available to save: {walletBalance} </p>
+        <p>Wallet Address: {walletAddress} </p>
         <form>
           <div>
-            <label htmlFor="">To:</label>
-            <input type="text" placeholder="input wallet address" />
+            <label htmlFor="">Amount:</label>
+            <input type="text" placeholder="Enter amount" />
           </div>
           <div>
-            <label htmlFor="">Amount:</label>
-            <input type="text" placeholder="Enter amount to be withdrawn" />
+            <label htmlFor="">End Day:</label>
+            <input type="date" />
           </div>
 
-          <button className="--btn-primary --btn --btn-block">Withdraw Asset</button>
+          <button className="--btn-primary --btn --btn-block">Submit</button>
         </form>
       </section>
     </div>
   );
 };
 
-export default WithdrawalPage;
+export default SaveAsset;

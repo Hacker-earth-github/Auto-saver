@@ -197,7 +197,7 @@ p {
 
 .home{
   background-color: #007bff;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
  
 }
@@ -231,6 +231,12 @@ p {
   color: #fff;
   padding: 10px 100px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .btnBlue:hover {
@@ -244,6 +250,8 @@ p {
   padding: 10px 100px;
   cursor: pointer;
   transition-duration: 600ms;
+  border: none;
+  border-radius: 5px;
 }
 
 .btnWhite:hover {
