@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaBox } from "react-icons/fa";
 
 const Footer = () => {
+  const currentDate = new Date();
   return (
-    <div>Footer</div>
-  )
-}
+    <footer
+      className="--flex-center b-top"
+      style={{ fontSize: "25px", display: "flex", alignContent: "center" }}
+    >
+      <p style={{  display: "flex", alignItems: "center", gap: "4px" }}>
+        All Rights Reserved || Copyright &copy; {currentDate.getFullYear()}{" "}
+        <FaBox />
+        <Link>ÀJọ</Link>
+      </p>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

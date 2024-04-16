@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Layout from "./components/Layout";
+import WithdrawalPage from "./components/Withdrawal/WithdrawalPage";
+import WithsrawalSuccess from "./components/Withdrawal/WithsrawalSuccess";
 
 function App() {
   return (
@@ -11,7 +13,6 @@ function App() {
           path="/"
           element={
             <Layout>
-              {" "}
               <Home />
             </Layout>
           }
@@ -23,6 +24,11 @@ function App() {
               <Dashboard />
             </Layout>
           }
+        />
+        <Route path="withdrawal-page" element={<WithdrawalPage />} />
+        <Route
+          path="/withdrawal-success-page"
+          element={<WithsrawalSuccess />}
         />
       </Routes>
     </>
