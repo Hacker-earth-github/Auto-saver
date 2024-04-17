@@ -1,0 +1,42 @@
+@media screen and (min-width: 350px) {
+    .__balance_page{
+        background-color: #0f2151;
+        padding: 10px;
+        color: #fff;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .__transaction{
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 7rem;
+    }
+
+    .__transaction_second{
+        display: flex;
+        gap: 5rem;
+    }
+}
+
+@media screen and (min-width: 1030px) {
+    .__balance_page{
+        background-color: #0f2151;
+        padding: 10px;
+        color: #fff;
+    }
+
+    .__transaction{
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 7rem;
+    }
+
+    .__transaction_second{
+        display: flex;
+        gap: 25rem;
+        margin-right: 10rem;
+    }
+}

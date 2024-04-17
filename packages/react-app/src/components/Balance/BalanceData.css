@@ -1,0 +1,15 @@
+.__balance_input{
+    display: flex;
+}
+
+.__balance_input input{
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+}
+
+.__save_Withdrawal{
+    display: flex;
+    gap: 3rem;
+}
