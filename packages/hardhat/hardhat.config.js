@@ -11,7 +11,7 @@ module.exports = {
     },
     celo: {
       url: "https://forno.celo.org",
-      accounts: [process.env.CELO_MAINNET_PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY],
     },
   },
   etherscan: {

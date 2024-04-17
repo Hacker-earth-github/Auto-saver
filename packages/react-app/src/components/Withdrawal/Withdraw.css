@@ -38,6 +38,12 @@
   
 }
 
+.form-container > div {
+  display: flex;
+  gap: 4px;
+  width: 40%;
+}
+
 form {
   width: 80%;
   max-width: 40rem;
