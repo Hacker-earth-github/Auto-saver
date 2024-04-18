@@ -6,10 +6,13 @@ import WithdrawalPage from "./components/Withdrawal/WithdrawalPage";
 import WithsrawalSuccess from "./components/Withdrawal/WithsrawalSuccess";
 import SaveAsset from "./components/Save/SaveAsset";
 import AutoSave from "./components/Save/AutoSave";
+import Wallet from "./components/Wallet/Wallet";
+import TokenApproval from "./components/TokenApproval/TokenApproval";
 
 function App() {
   return (
     <>
+    <Wallet>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -42,8 +45,15 @@ function App() {
           path="/withdrawal-success-page"
           element={<WithsrawalSuccess />}
         />
+
+        <Route
+          path="/token-approval"
+          element={<TokenApproval />}
+        />
       </Routes>
+      </Wallet>
     </>
+    
   );
 }
 

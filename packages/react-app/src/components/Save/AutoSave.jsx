@@ -21,16 +21,18 @@ const AutoSave = () => {
             <input type="text" placeholder="Enter amount" />
           </div>
           <div>
-            <label htmlFor="">Start Time:</label>
+            <label htmlFor="">Deposit Time:</label>
             <input type="time" />
           </div>
           <div>
-            <label htmlFor="">End Time:</label>
+            <label htmlFor="">Withdrawal Time:</label>
             <input type="time" />
           </div>
 
           <button className="--btn-primary --btn --btn-block">Submit</button>
         </form>
+
+        <Link to="/dashboard">Dashboard</Link>
       </section>
     </div>
   );

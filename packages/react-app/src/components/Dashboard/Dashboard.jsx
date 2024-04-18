@@ -43,10 +43,13 @@ const Dashboard = () => {
 
               <div>
                 <Link to="/save-asset" className="--btn --btn-primary">
-                  Send
+                  Save
                 </Link>
                 <Link to="/withdrawal-page" className="--btn --btn-secondary">
                   Withdraw
+                </Link>
+                <Link to="/token-approval" className="--btn --btn-danger">
+                  Approve Token
                 </Link>
               </div>
             </nav>
