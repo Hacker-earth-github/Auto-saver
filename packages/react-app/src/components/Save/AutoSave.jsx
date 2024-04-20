@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import "../Withdrawal/Withdraw.css";
-import { useRef, useContext } from "react";
+import { useRef, useContext,useState, useEffect } from "react";
 import Web3Context from "../../../context/Web3Context";
 import { ethers } from "ethers";
 import AutoSaveContext from "../../../context/AutoSaveContext";
 import toast from "react-hot-toast";
 
+
 const AutoSave = () => {
-  const { autoSaverContract } = useContext(Web3Context);
+  const { autoSaverContract, selectedAccount} = useContext(Web3Context);
   const { isReload, setIsReload } = useContext(AutoSaveContext);
   const autoDepositAmountRef = useRef();
   const autoWithdrawAmountRef = useRef();
   const autoDepositTimeRef = useRef();
   const autoWithdrawTimeRef = useRef();
   const currentTime = new Date();
+  const [balanceVal, setBalanceVal]= useState('0');
 
   const automatedDeposit = async (e) => {
     e.preventDefault();
@@ -39,7 +41,9 @@ const AutoSave = () => {
       return;
     }
 
-    const timeDifferenceInSecondsToString = Math.round(timeDifferenceInSeconds).toString();
+    const timeDifferenceInSecondsToString = Math.round(
+      timeDifferenceInSeconds
+    ).toString();
 
     const amountToDeposit = ethers.parseUnits(amount, 18).toString();
     try {
@@ -85,8 +89,10 @@ const AutoSave = () => {
       return;
     }
 
-    const timeDifferenceInSecondsToString = Math.round(timeDifferenceInSeconds).toString();
-    console.log(timeDifferenceInSecondsToString)
+    const timeDifferenceInSecondsToString = Math.round(
+      timeDifferenceInSeconds
+    ).toString();
+    console.log(timeDifferenceInSecondsToString);
 
     const amountToWithdraw = ethers.parseUnits(amount, 18).toString();
     try {
@@ -108,7 +114,24 @@ const AutoSave = () => {
     }
   };
 
- 
+  useEffect(() => {
+    const fetchBalanceInfo = async () => {
+      try {
+        const balanceValueWei = await autoSaverContract.getAutoBalance(selectedAccount);
+        const balanceValueEth = ethers.formatUnits(balanceValueWei,18).toString();
+        const roundedBalance = parseFloat(balanceValueEth).toFixed(2)
+        setBalanceVal(roundedBalance)
+        
+      } catch (error) {
+        toast.error("Error Fetching Balance")
+        console.error(error.message)
+      }
+    }
+    const interval = setInterval(() => {
+      autoSaverContract && fetchBalanceInfo();
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [autoSaverContract, selectedAccount])
 
   return (
     <div className="container">
@@ -144,7 +167,6 @@ const AutoSave = () => {
           </button>
         </form>
 
-
         <form onSubmit={automatedWithdrawal}>
           <h3>Auto Withdraw</h3>
           <div>
@@ -163,15 +185,14 @@ const AutoSave = () => {
             className="--btn-primary --btn --btn-block"
             onClick={automatedWithdrawal}
           >
-            Schedule Deposit
+            Schedule Withdraw
           </button>
         </form>
 
-        <Link to="/dashboard">Dashboard</Link>
+       <p>Auto Balance: {balanceVal}</p>
       </section>
     </div>
   );
 };
 
 export default AutoSave;
-

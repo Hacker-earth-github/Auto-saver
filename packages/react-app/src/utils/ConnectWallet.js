@@ -2,7 +2,7 @@ import { ethers, Contract } from "ethers";
 import { autoSaveAddress, toks, toksAddress } from "../../context/constant";
 import { auto } from "../../context/constant";
 import Web3 from "web3";
-import { ethers } from "ethers";
+
 
 
 export const connectWallet = async () => {

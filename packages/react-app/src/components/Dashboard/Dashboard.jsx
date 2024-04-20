@@ -1,4 +1,3 @@
-// Modified Dashboard component
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import Load from "../HomeLoader/Load";
@@ -11,19 +10,16 @@ const Dashboard = () => {
   const [walletAddress, setWalletAddress] = useState(null);
   const [walletBalance, setWalletBalance] = useState(null);
   const [walletSymbol, setWalletSymbol] = useState(null);
-  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const walletData = await connectWallet();
         setWalletAddress(walletData.selectedAccount);
-        
+
         setWalletBalance(walletData.balanceInWei);
         setWalletSymbol(walletData.symbol);
         setLoading(false);
-        console.log(walletData);
-        console.log(balanceInWallet);
       } catch (error) {
         console.error("Error connecting wallet:", error);
         setLoading(false);
@@ -48,11 +44,9 @@ const Dashboard = () => {
 
               <div>
                 <Link to="/save-asset" className="--btn --btn-primary">
-                  Save
+                  Save Token
                 </Link>
-                <Link to="/withdrawal-page" className="--btn --btn-secondary">
-                  Withdraw
-                </Link>
+
                 <Link to="/token-approval" className="--btn --btn-danger">
                   Approve Token
                 </Link>

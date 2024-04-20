@@ -76,13 +76,13 @@ const Wallet = ({ children }) => {
   return (
     <div>
       <WebButton
-        onClick={disconnect}
+        onClick={handleWallet}
         type="button"
         label={
           state.selectedAccount ? (
             "Disconnect"
           ) : (
-            <Link to="/dashboard">Go To Dashboard</Link>
+            "Connect"
           )
         }
         disabled={isLoading}
