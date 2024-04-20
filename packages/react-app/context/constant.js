@@ -4,5 +4,9 @@ import autoSave from "../context/autoSave.json";
 export const toks = toksAbi.abi;
 export const auto = autoSave.abi;
 
-export const toksAddress = "0x7C2A1e2A62E2AA0311bD39587c29223C2eA20F9F";
-export const autoSaveAddress = "0xabb1d7d4c0037b3d65b8da93e462584234109b3e";
+export const toksAddress = "0x35231E4080fb06586457e2D2c6B63072D9CDF707";
+export const autoSaveAddress = "0xC220eeF6Bf7f5Dd9118Fc9f4c264BA4397149d1C";
+
+
+  // Autosaver: 
+  // Ajo: 

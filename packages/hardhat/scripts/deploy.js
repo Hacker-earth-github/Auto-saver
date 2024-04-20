@@ -6,7 +6,7 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const AutoSaver = await ethers.getContractFactory("AutoSaver");
-  const autoSaver = await AutoSaver.deploy('0x7C2A1e2A62E2AA0311bD39587c29223C2eA20F9F');
+  const autoSaver = await AutoSaver.deploy('0x35231E4080fb06586457e2D2c6B63072D9CDF707');
   await autoSaver.deployed();
 
   console.log("AutoSaver deployed to:", autoSaver.address);
@@ -21,4 +21,7 @@ main()
     process.exit(1);
   });
 
-  //0xabb1d7d4c0037b3d65b8da93e462584234109b3e
+
+  //AutoSaver 0xC220eeF6Bf7f5Dd9118Fc9f4c264BA4397149d1C
+
+ 

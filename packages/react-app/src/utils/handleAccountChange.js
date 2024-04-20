@@ -1,3 +1,4 @@
+
 export const handleAccountChange = async (setState) => {
   const accounts = await window.ethereum.request({
     method: "eth_requestAccounts",
@@ -5,5 +6,7 @@ export const handleAccountChange = async (setState) => {
 
   const selectedAccount = accounts[0];
   console.log(selectedAccount);
+
+  
   setState((prev) => ({ ...prev, selectedAccount }));
 };

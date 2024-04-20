@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import HomeLoader from "./HomeLoader/HomeLoader";
 import Layout from "./Layout";
-import { Web3 } from "web3";
-import { Link } from "react-router-dom";
-import Wallet from "./Wallet/Wallet";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [connectedAccount, setConnectedAccount] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,7 +17,10 @@ const Home = () => {
         <HomeLoader />
       ) : (
         <Layout>
-          <section className="home">
+          <section
+            className="home"
+            style={{ fontFamily: "var(--font-family)" }}
+          >
             <div className="all">
               <div className="homeCon">
                 <h1>ÀJọ: Your Path to Financial Freedom</h1>
@@ -30,8 +29,6 @@ const Home = () => {
                   transactions.
                 </p>
               </div>
-
-              <Wallet />
             </div>
           </section>
         </Layout>

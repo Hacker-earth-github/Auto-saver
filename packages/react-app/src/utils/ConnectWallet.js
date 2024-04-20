@@ -1,6 +1,9 @@
 import { ethers, Contract } from "ethers";
 import { autoSaveAddress, toks, toksAddress } from "../../context/constant";
 import { auto } from "../../context/constant";
+import Web3 from "web3";
+import { ethers } from "ethers";
+
 
 export const connectWallet = async () => {
   try {
@@ -16,18 +19,10 @@ export const connectWallet = async () => {
       throw new Error("Metamask is not installed");
     }
 
-    const storedAccount = localStorage.getItem("selectedAccount");
-    let selectedAccount;
-
-    if (storedAccount) {
-      selectedAccount = storedAccount;
-    } else {
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      selectedAccount = accounts[0];
-      localStorage.setItem("selectedAccount", selectedAccount);
-    }
+    const accounts = await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+    const selectedAccount = accounts[0];
 
     let chainIdHex = await window.ethereum.request({
       method: "eth_chainId",
@@ -44,12 +39,34 @@ export const connectWallet = async () => {
     ajoTokenContract = new Contract(toksContractAddress, toks, signer);
     autoSaverContract = new Contract(autoSaveContractAddress, auto, signer);
 
+    const web3 = new Web3(window.ethereum);
+    const tokenContract = new web3.eth.Contract(toks, toksAddress);
+
+    
+
+    const balance = await tokenContract.methods
+      .balanceOf(selectedAccount)
+      .call();
+      const balanceInWei = ethers.formatUnits(balance.toString(), 18);
+
+    const symbol = await tokenContract.methods.symbol().call();
+
+    console.log("Selected Account:", selectedAccount);
+    console.log("Token Balance:", balanceInWei);
+    console.log("Token Symbol:", symbol);
+
+    if (window.ethereum === null) {
+      throw new Error("Metamask is not installed");
+    }
+
     return {
       provider,
       selectedAccount,
       ajoTokenContract,
       autoSaverContract,
       chainId,
+      balanceInWei,
+      symbol,
     };
   } catch (err) {
     console.error(err);

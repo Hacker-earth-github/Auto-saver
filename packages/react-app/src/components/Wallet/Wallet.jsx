@@ -4,7 +4,7 @@ import Web3Context from "../../../context/Web3Context";
 import WebButton from "../Button/Button";
 import { handleAccountChange } from "../../utils/handleAccountChange";
 import { handleChainChange } from "../../utils/handleChainChange";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Wallet = ({ children }) => {
   const [state, setState] = useState({
@@ -15,8 +15,13 @@ const Wallet = ({ children }) => {
     chainId: null,
   });
 
+  const disconnect = () => {
+    setState({ selectedAccount: null });
+  };
+
   const [isLoading, setIsLoading] = useState(false);
 
+  const location = useLocation();
   useEffect(() => {
     window.ethereum.on("accountsChanged", () => handleAccountChange(setState));
     window.ethereum.on("chainChanged", () => handleChainChange(setState));
@@ -71,13 +76,13 @@ const Wallet = ({ children }) => {
   return (
     <div>
       <WebButton
-        onClick={handleWallet}
+        onClick={disconnect}
         type="button"
         label={
           state.selectedAccount ? (
-            <Link to="/dashboard">Go To Dashboard </Link>
+            "Disconnect"
           ) : (
-            "Connect Wallet"
+            <Link to="/dashboard">Go To Dashboard</Link>
           )
         }
         disabled={isLoading}
