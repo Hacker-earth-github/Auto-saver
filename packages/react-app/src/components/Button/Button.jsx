@@ -3,6 +3,7 @@ const WebButton = ({ onClick, label }) => {
     <button onClick={onClick} className="--btn --btn-primary" >
       {label}
     </button>
+    
   );
 };
 
