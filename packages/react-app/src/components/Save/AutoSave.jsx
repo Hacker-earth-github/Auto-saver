@@ -177,10 +177,12 @@ const AutoSave = () => {
               placeholder="Enter amount"
             />
           </div>
+
           <div>
             <label htmlFor="">Time to withdraw :</label>
             <input ref={autoWithdrawTimeRef} type="time" defaultValue="00:00" />
           </div>
+          
           <button
             className="--btn-primary --btn --btn-block"
             onClick={automatedWithdrawal}
